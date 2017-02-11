@@ -1,0 +1,10 @@
+{
+  "name": "sortable-factoral-survey",
+  "version": "0.0.1",
+  "description": "Easily collect data from users by allowing them to drag-drop a list of answers",
+  "dependencies": {
+    "sortablejs": "1.5.0-rc1",
+    "jquery": "3.1.1",
+    "bootstrap": "3.3.7"
+  }
+}
