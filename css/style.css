@@ -31,3 +31,7 @@
 .form-section {
   display: none;
 }
+
+#hidden-input{
+  display: none;
+}

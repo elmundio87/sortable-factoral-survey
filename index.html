@@ -26,6 +26,7 @@
               Please chose a score for each of these chocolate box characteristics. Please rank each with a score of 1 (best/preferred)  to 10 (worst/least preferred)
               <ol id="items">
               </ol>
+              <input type="text" id="hidden-input" name="chocolate"></input>
           </div>
           
           <div class="form-section">
@@ -90,7 +91,7 @@
   <script src="node_modules/parsleyjs/dist/parsley.min.js"></script>
 
   <script>
-    addQuestion = function(list, question){
+    addQuestion = function(list, question, id){
       
       listitem = document.createElement('li');
       
@@ -102,6 +103,7 @@
       
       $(paragraph).text(question)
           .appendTo($(container))
+          .attr("id",id)
           
       $(listitem).appendTo($(list))
       
@@ -111,19 +113,28 @@
   <script>
     var el = document.getElementById('items');
     
-    addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £15")
-    addQuestion(el, "A Rectangular Box with No Picture Containing A Mix of Dark and Milk Chocolates and Costing £15")
-    addQuestion(el, "A Round Box with No Picture Containing Mostly Dark Chocolate and Costing £10")
-    addQuestion(el, "A Rectangular Box with No Picture Containing Mostly Milk Chocolates and Costing £10")
-    addQuestion(el, "A Round Box with No Picture Containing Mostly Dark Chocolates and Costing £15")
-    addQuestion(el, "A Round Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £15")
-    addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Dark Chocolates and Costing £15")
-    addQuestion(el, "A Round Box with No Picture Containing Mostly Milk Chocolates and Costing £10")
-    addQuestion(el, "A Round Box with a Picture on the Front Containing a Mix of Dark and Milk Chocolates and Costing £10")
-    addQuestion(el, "A Round Box with No Picture Containing a Mix of Dark and Milk Chocolates and Costing £10")
+    addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £15","choice1")
+    addQuestion(el, "A Rectangular Box with No Picture Containing A Mix of Dark and Milk Chocolates and Costing £15","choice2")
+    addQuestion(el, "A Round Box with No Picture Containing Mostly Dark Chocolate and Costing £10","choice3")
+    addQuestion(el, "A Rectangular Box with No Picture Containing Mostly Milk Chocolates and Costing £10","choice4")
+    addQuestion(el, "A Round Box with No Picture Containing Mostly Dark Chocolates and Costing £15","choice5")
+    addQuestion(el, "A Round Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £15","choice6")
+    addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Dark Chocolates and Costing £15","choice7")
+    addQuestion(el, "A Round Box with No Picture Containing Mostly Milk Chocolates and Costing £10","choice8")
+    addQuestion(el, "A Round Box with a Picture on the Front Containing a Mix of Dark and Milk Chocolates and Costing £10","choice9")
+    addQuestion(el, "A Round Box with No Picture Containing a Mix of Dark and Milk Chocolates and Costing £10","choice10")
     
     var sortable = Sortable.create(el, {
-      chosenClass: "sortable-chosen"
+      chosenClass: "sortable-chosen",
+      
+      onEnd: function (/**Event*/evt) {
+        $("hidden-input").val("")
+        $( "#items li p" ).each(function() {
+            $("#hidden-input").val(
+              $("#hidden-input").val() + $(this).attr("id") + ","
+            )
+        });
+     },
     });
   </script>
   
