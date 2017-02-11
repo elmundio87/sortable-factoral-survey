@@ -108,10 +108,28 @@
       $(listitem).appendTo($(list))
       
     }
+    
+    updateInput = function(){
+      $("#hidden-input").val("")
+      $( "#items li p" ).each(function() {
+          $("#hidden-input").val(
+            $("#hidden-input").val() + $(this).attr("id") + ","
+          )
+      });
+    }
   </script>
 
   <script>
     var el = document.getElementById('items');
+    var sortable = Sortable.create(el, {
+      chosenClass: "sortable-chosen",
+      ghostClass: "sortable-ghost",
+      animation: 150,
+      
+      onUpdate: function (/**Event*/evt) {
+        updateInput()
+     },
+    });
     
     addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £15","choice1")
     addQuestion(el, "A Rectangular Box with No Picture Containing A Mix of Dark and Milk Chocolates and Costing £15","choice2")
@@ -123,19 +141,7 @@
     addQuestion(el, "A Round Box with No Picture Containing Mostly Milk Chocolates and Costing £10","choice8")
     addQuestion(el, "A Round Box with a Picture on the Front Containing a Mix of Dark and Milk Chocolates and Costing £10","choice9")
     addQuestion(el, "A Round Box with No Picture Containing a Mix of Dark and Milk Chocolates and Costing £10","choice10")
-    
-    var sortable = Sortable.create(el, {
-      chosenClass: "sortable-chosen",
-      
-      onEnd: function (/**Event*/evt) {
-        $("hidden-input").val("")
-        $( "#items li p" ).each(function() {
-            $("#hidden-input").val(
-              $("#hidden-input").val() + $(this).attr("id") + ","
-            )
-        });
-     },
-    });
+    updateInput()
   </script>
   
   

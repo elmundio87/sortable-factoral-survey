@@ -21,7 +21,11 @@
 }
 
 .sortable-chosen {
-  background-color: darkgrey
+  background-color: lightgray !important;
+}
+
+.sortable-ghost {
+  background-color: gray !important;
 }
 
 .form-section.current {
