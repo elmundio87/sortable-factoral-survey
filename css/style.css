@@ -1,6 +1,33 @@
-li {
+#items li {
     border: black 1px solid;
-    text-align: center;
     background: lightgray;
-    height: 40px;
+    height: 50px;
+    font-size: 16px;
+}
+
+.vcontainer {
+    height: 25px;
+    width: 100%;
+    position: relative;
+}
+
+.vcontainer p {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+
+.sortable-chosen {
+  background-color: darkgrey
+}
+
+.form-section.current {
+  display: block;
+}
+
+.form-section {
+  display: none;
 }
