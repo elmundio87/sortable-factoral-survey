@@ -13,6 +13,8 @@
       <div class="col-md-12">
         <form class="demo-form" action="https://s6ncukt4ci.execute-api.eu-west-1.amazonaws.com/dev/submit" method="POST">
           <h1>Chocolate Box</h1>
+          <input type="text" class="hidden" name="survey_name" value="chocolate"/>
+          <input type="text" class="hidden" name="origin_domain" id="origin_domain"/>
           
           <div class="form-section">
             <p>The results from this survey will be used in my Conjoint Analysis course as an example data set. This questionnaire is anonymous and only for used for educational purposes. If you have any questions, do not hesitate to contact me at <a href="mailto:david.dipple@btinternet.com">david.dipple@btinternet.com</a></p>
@@ -150,6 +152,7 @@
   
   <script type="text/javascript">
     $('form').parsley();
+    $("#origin_domain").attr("value",window.location.origin)
   </script>
   
   <script type="text/javascript">
