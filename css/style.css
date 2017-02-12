@@ -39,3 +39,13 @@
 #hidden-input{
   display: none;
 }
+
+.page1-side-by-side{
+  height: 320px !important;
+}
+
+img.page1-logo{
+  left: 0px;
+  bottom: 50px;
+  position: absolute;
+}
