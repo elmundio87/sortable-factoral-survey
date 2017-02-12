@@ -124,7 +124,7 @@
       
       paragraph = document.createElement('p');
       
-      $(paragraph).text(question)
+      $(paragraph).html(question)
           .appendTo($(container))
           .attr("id",id)
           
@@ -152,16 +152,16 @@
      },
     });
     
-    addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £20","choice1")
-    addQuestion(el, "A Rectangular Box with No Picture Containing A Mix of Dark and Milk Chocolates and Costing £20","choice2")
-    addQuestion(el, "A Round Box with No Picture Containing Mostly Dark Chocolate and Costing £15","choice3")
-    addQuestion(el, "A Rectangular Box with No Picture Containing Mostly Milk Chocolates and Costing £15","choice4")
-    addQuestion(el, "A Round Box with No Picture Containing Mostly Dark Chocolates and Costing £20","choice5")
-    addQuestion(el, "A Round Box with a Picture on the Top Containing Mostly Milk Chocolates and Costing £20","choice6")
-    addQuestion(el, "A Rectangular Box with a Picture on the Top Containing Mostly Dark Chocolates and Costing £20","choice7")
-    addQuestion(el, "A Round Box with No Picture Containing Mostly Milk Chocolates and Costing £15","choice8")
-    addQuestion(el, "A Round Box with a Picture on the Front Containing a Mix of Dark and Milk Chocolates and Costing £15","choice9")
-    addQuestion(el, "A Round Box with No Picture Containing a Mix of Dark and Milk Chocolates and Costing £15","choice10")
+    addQuestion(el, "A <b>Rectangular</b> Box with a <b>Picture</b> on the Top Containing <b>Mostly Milk</b> Chocolates and Costing <b>£20</b>","choice1")
+    addQuestion(el, "A <b>Rectangular</b> Box with <b>No Picture</b> Containing A <b>Mix of Dark and Milk</b> Chocolates and Costing <b>£20</b>","choice2")
+    addQuestion(el, "A <b>Round</b> Box with <b>No Picture</b> Containing <b>Mostly Dark</b> Chocolate and Costing <b>£15</b>","choice3")
+    addQuestion(el, "A <b>Rectangular</b> Box with <b>No Picture</b> Containing <b>Mostly Milk</b> Chocolates and Costing <b>£15</b>","choice4")
+    addQuestion(el, "A <b>Round</b> Box with <b>No Picture</b> Containing <b>Mostly Dark</b> Chocolates and Costing <b>£20</b>","choice5")
+    addQuestion(el, "A <b>Round</b> Box with a <b>Picture</b> on the Top Containing <b>Mostly Milk</b> Chocolates and Costing <b>£20</b>","choice6")
+    addQuestion(el, "A <b>Rectangular</b> Box with a <b>Picture</b> on the Top Containing <b>Mostly Dark</b> Chocolates and Costing <b>£20</b>","choice7")
+    addQuestion(el, "A <b>Round</b> Box with <b>No Picture</b> Containing <b>Mostly Milk</b> Chocolates and Costing <b>£15</b>","choice8")
+    addQuestion(el, "A <b>Round</b> Box with a <b>Picture</b> on the Front Containing a <b>Mix of Dark and Milk</b> Chocolates and Costing <b>£15</b>","choice9")
+    addQuestion(el, "A <b>Round</b> Box with <b>No Picture</b> Containing a <b>Mix of Dark and Milk</b> Chocolates and Costing <b>£15</b>","choice10")
     updateInput()
   </script>
   
