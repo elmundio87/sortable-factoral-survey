@@ -44,8 +44,31 @@
   height: 320px !important;
 }
 
+
+.page1-side-by-side{
+  padding-top: 15px;
+}
+
 img.page1-logo{
   left: 0px;
   bottom: 50px;
   position: absolute;
+}
+
+.header{
+  background: rgb(0, 150, 136);
+  height: 100px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+.survey-box {
+    margin-top: 40px;
+    background: white;
+    border-color: black;
+    border-width: 2px;
+    border-style: dotted;
+    padding: 20px;
 }
