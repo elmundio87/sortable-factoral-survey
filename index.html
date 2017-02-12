@@ -26,7 +26,6 @@
               Please chose a score for each of these chocolate box characteristics. Please rank each with a score of 1 (best/preferred)  to 10 (worst/least preferred)
               <ol id="items">
               </ol>
-              <input type="text" id="hidden-input" name="chocolate"></input>
           </div>
           
           <div class="form-section">
@@ -94,6 +93,12 @@
     addQuestion = function(list, question, id){
       
       listitem = document.createElement('li');
+      hiddeninput = document.createElement('input');
+      $(hiddeninput).attr("type","text")
+      $(hiddeninput).attr("name",id)
+      $(hiddeninput).attr("id","hiddeninput_" + id)
+      
+      $(hiddeninput).addClass("hidden")
       
       container = document.createElement('div');
       $(container).addClass('vcontainer')
@@ -106,15 +111,13 @@
           .attr("id",id)
           
       $(listitem).appendTo($(list))
+      $(hiddeninput).appendTo($(list))
       
     }
     
     updateInput = function(){
-      $("#hidden-input").val("")
-      $( "#items li p" ).each(function() {
-          $("#hidden-input").val(
-            $("#hidden-input").val() + $(this).attr("id") + ","
-          )
+      $( "#items li p" ).each(function(index, value) {
+          $("#hiddeninput_" + $(value).attr("id")).val(index + 1)
       });
     }
   </script>
